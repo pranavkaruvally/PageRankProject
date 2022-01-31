@@ -1,16 +1,17 @@
 import scrapy
+import random
 
 
 class OswaldSpider(scrapy.Spider):
     name = 'oswald'
-    count = -1
+    count = 0
     start_urls = [
-        # 'http://127.0.0.1:8000/health/h2',
-        'http://127.0.0.1:8000/technology/t8',
-        'http://127.0.0.1:8000/animals/a19',
-        'http://127.0.0.1:8000/animals/a18',
+        'http://127.0.0.1:8000/health/h0',
+        'http://127.0.0.1:8000/technology/t5',
+        'http://127.0.0.1:8000/cars/c10',
+        'http://127.0.0.1:8000/animals/a15',
         'http://127.0.0.1:8000/business/b20',
-        # 'http://127.0.0.1:8000/movies/m26',
+        'http://127.0.0.1:8000/movies/m25',
     ]
     collected_urls = list()
     prev_url = start_urls[0]
@@ -22,12 +23,17 @@ class OswaldSpider(scrapy.Spider):
             if next_page_url not in self.collected_urls:
                 self.count += 1
                 self.collected_urls.append(next_page_url)
+                if next_page_url not in self.start_urls:
+                    self.start_urls.append(next_page_url)
                 yield {
                     # self.prev_url: next_page_url,
                     next_page_url: self.count
                 }
-        self.prev_url = next_page_url
+        # self.prev_url = next_page_url
         # yield response.follow(next_page_url, callback=self.parse)
+        urls = response.css('a::attr(href)').getall()
+        random.shuffle(urls)
+        next_page_url = urls[0]
         yield scrapy.Request(next_page_url)
 
 # import scrapy
