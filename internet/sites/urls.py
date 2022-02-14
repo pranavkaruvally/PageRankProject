@@ -8,4 +8,6 @@ urlpatterns = [
     path('animals/<str:site_id>', views.animals_view, name='health'),
     path('business/<str:site_id>', views.business_view, name='health'),
     path('movies/<str:site_id>', views.movies_view, name='health'),
+    path('api/scraper', views.scraper_api, name="scraper_api"),
+    path('scraper',views.scraper_ui, name="scraper_ui")
 ]

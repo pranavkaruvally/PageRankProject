@@ -1,6 +1,14 @@
 from django.shortcuts import render
+from django.http import JsonResponse
+from .oswald.test import link_loader
 
+
+import time
+import json
 # Create your views here.
+
+
+
 def health_view(request, site_id):
     file_name = 'health/' + site_id + ".html"
     return render(request, file_name)
@@ -24,3 +32,11 @@ def business_view(request, site_id):
 def movies_view(request, site_id):
     file_name = 'movies/' + site_id + ".html"
     return render(request, file_name)
+
+def scraper_api(req):
+    links = link_loader()
+    print(links)
+    return JsonResponse({'status':json.dumps(links)})
+
+def scraper_ui(request):
+    return render(request,'scrape.html')
