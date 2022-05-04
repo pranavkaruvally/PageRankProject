@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 def term_frequency(term, doc):
     doc_string = doc.lower()
     term_reps = doc_string.count(term.lower())
-    len_of_document = float(len(doc_string))
+    len_of_document = float(len(doc_string.split()))
     normalized_tf = term_reps / len_of_document
 
     return normalized_tf

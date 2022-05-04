@@ -22,3 +22,9 @@ http://127.0.0.1:8000/movies/m27
 http://127.0.0.1:8000/animals/a15
 http://127.0.0.1:8000/animals/a17
 http://127.0.0.1:8000/health/h3
+http://127.0.0.1:8000/animals/a18
+http://127.0.0.1:8000/animals/a19
+http://127.0.0.1:8000/business/b20
+http://127.0.0.1:8000/business/b24
+http://127.0.0.1:8000/health/h2
+http://127.0.0.1:8000/technology/t9

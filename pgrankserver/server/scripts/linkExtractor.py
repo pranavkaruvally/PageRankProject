@@ -3,12 +3,19 @@ from urllib.request import Request, urlopen
 import numpy as np
 import re
 
-universal_link_set = {
-    "http://127.0.0.1:8000/cats/1": 0,
-    "http://127.0.0.1:8000/cats/2": 1,
-    "http://127.0.0.1:8000/cats/3": 2,
-    "http://127.0.0.1:8000/cats/4": 3,
-}
+# universal_link_set = {
+#     "http://127.0.0.1:8000/cats/1": 0,
+#     "http://127.0.0.1:8000/cats/2": 1,
+#     "http://127.0.0.1:8000/cats/3": 2,
+#     "http://127.0.0.1:8000/cats/4": 3,
+# }
+
+def universal_link_set_retriever():
+    with open('sites.txt', 'r') as f:
+        link_set = f.read().strip().split()
+        return link_set
+
+universal_link_set = universal_link_set_retriever()
 
 def extract_links(url):
     req = Request(url) # "http://127.0.0.1:8000/cats/1"
