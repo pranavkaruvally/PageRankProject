@@ -62,6 +62,7 @@ def sentence_wise_rank_generation(sentence):
             newDict = rank_all_pages(term)
             for key in allDocsDict.keys():
                 allDocsDict[key] += newDict[key]
+    allDocsDict = dict(sorted(allDocsDict.items()))
     return allDocsDict
 
 

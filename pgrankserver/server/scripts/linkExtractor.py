@@ -13,7 +13,9 @@ import re
 def universal_link_set_retriever():
     with open('sites.txt', 'r') as f:
         link_set = f.read().strip().split()
-        return link_set
+        link_set.sort(key=lambda x: x.split('/')[-1])
+        link_dict = dict(zip(link_set, [x for x in range(30)]))
+        return link_dict
 
 universal_link_set = universal_link_set_retriever()
 
