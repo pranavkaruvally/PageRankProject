@@ -77,8 +77,15 @@ p{
 .wrapper .center .top h3{
     font-family: 'VT323', monospace;
     font-size:70px;
-    color:brown
+    color:brown;
 }
+
+.wrapper .center .top .logo h3{
+    justify-content: left;
+    align-items: left;
+    color: black;
+}
+
 .wrapper .center .bottom{
     flex-basis: 40%;
     width:100%;

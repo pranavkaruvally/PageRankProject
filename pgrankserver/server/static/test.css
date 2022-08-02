@@ -21,6 +21,8 @@ del {
 }
 body {
 	font-family: "Circular-Std-Regular", Arial, Helvetica, sans-serif;
+    padding: 1cm;
+    padding-left: 2cm;
 	font-size: 17px;
 	color: #160647;
 	overflow-x: hidden;
@@ -55,23 +57,23 @@ p{
     height:95vh;
     margin:0 auto;
     width:55%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display:contents;
+    justify-content: space-around;
+    align-items: left;
 }
 .wrapper .center{
     width:80%;
     height:200px;
 
-    display: flex;
+    display: contents;
     justify-content: space-around;
     flex-direction: column;
 }
 .wrapper .center .top{
     flex-basis: 60%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
     
 }
 .wrapper .center .top h3{
@@ -79,6 +81,13 @@ p{
     font-size:70px;
     color:brown;
 }
+
+.wrapper .center .top .logo h3{
+    justify-content: left;
+    align-items: left;
+    color: black;
+}
+
 .wrapper .center .bottom{
     flex-basis: 40%;
     width:100%;
@@ -95,6 +104,9 @@ p{
 .wrapper .center .bottom .searchbar{
     flex-basis:90%;
     margin-right:10px;
+}
+.searchbar{
+    min-width: fit-content;
 }
 .wrapper .center .bottom input{
     width:100%;
