@@ -1,5 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
+
 <html>
     <head>
         <meta charset="utf-8">
@@ -7,26 +8,69 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{% static 'test.css' %}">
+        <link rel="stylesheet" href="{% static 'style.css' %}">
     </head>
     <body>
         <div class="wrapper">
-            <div class="center">
-                <div class="top">
-                    <div class="bottom">
-                    <div class="row">
-                        <h3>Poppi</h3>
-                        <div class="searchbar">
-                            <input type="text" id="searchh">
-                        </div>
-                       
-                        <div class="btn">
-                            <button onclick="window.location.href='https://www.google.com/search?q=Hey'">Search</button>
-                        </div>
+            <div class="nav-wrapper">
+                <div class="nav">
+                    <div class="logo">
+                        <h2>Poppi</h2>
                     </div>
+                    <div class="searchbar">
+                        <input type="text">
+                        <button>
+                            <img src="zoom.png" alt="">
+                        </button>
                     </div>
                 </div>
             </div>
+            <section class="main">
+                <div class="result-container">
+                    <div class="result">
+                        <a href="#" class="link">www.google.com</a>
+                        <h1 class="result-head">
+                            <a>So cat's are dumb huh?</a>
+                        </h1>
+                        <p class="result-content">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit delectus voluptas sequi animi culpa, impedit, beatae quod optio minus saepe earum quos ut soluta magnam doloribus veniam quibusdam vero fuga.
+                        </p>
+                    </div>
+                </div>
+                <div class="result-container">
+                    <div class="result">
+                        <a href="#" class="link">www.google.com</a>
+                        <h1 class="result-head">
+                            <a>So cat's are dumb huh?</a>
+                        </h1>
+                        <p class="result-content">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit delectus voluptas sequi animi culpa, impedit, beatae quod optio minus saepe earum quos ut soluta magnam doloribus veniam quibusdam vero fuga.
+                        </p>
+                    </div>
+                </div>
+                <div class="result-container">
+                    <div class="result">
+                        <a href="#" class="link">www.google.com</a>
+                        <h1 class="result-head">
+                            <a>So cat's are dumb huh?</a>
+                        </h1>
+                        <p class="result-content">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit delectus voluptas sequi animi culpa, impedit, beatae quod optio minus saepe earum quos ut soluta magnam doloribus veniam quibusdam vero fuga.
+                        </p>
+                    </div>
+                </div>
+                <div class="result-container">
+                    <div class="result">
+                        <a href="#" class="link">www.google.com</a>
+                        <h1 class="result-head">
+                            <a>So cat's are dumb huh?</a>
+                        </h1>
+                        <p class="result-content">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit delectus voluptas sequi animi culpa, impedit, beatae quod optio minus saepe earum quos ut soluta magnam doloribus veniam quibusdam vero fuga.
+                        </p>
+                    </div>
+                </div>
+            </section>
         </div>
     </body>
 </html>
