@@ -11,7 +11,9 @@ def home(request):
     return render(request, 'search.html')
 
 def result(request):
+    print(request.GET)
+    query = request.GET['q']
     cat = Cats()
     cat_list = [cat] * 4
-    context = {'cat_list': cat_list}
+    context = {'query': query, 'cat_list': cat_list}
     return render(request, 'result.html', context)
