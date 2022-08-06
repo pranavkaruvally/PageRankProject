@@ -20,56 +20,25 @@
                     <div class="searchbar">
                         <input type="text">
                         <button>
-                            <img src="zoom.png" alt="">
+                            <img src="{% static 'zoom.png' %}" alt="">
                         </button>
                     </div>
                 </div>
             </div>
             <section class="main">
+                {% for cat in cat_list %}
                 <div class="result-container">
                     <div class="result">
                         <a href="#" class="link">www.google.com</a>
                         <h1 class="result-head">
-                            <a>So cat's are dumb huh?</a>
+                            <a>{{ cat.cathead }}</a>
                         </h1>
                         <p class="result-content">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit delectus voluptas sequi animi culpa, impedit, beatae quod optio minus saepe earum quos ut soluta magnam doloribus veniam quibusdam vero fuga.
+                            {{ cat.catbody }}
                         </p>
                     </div>
                 </div>
-                <div class="result-container">
-                    <div class="result">
-                        <a href="#" class="link">www.google.com</a>
-                        <h1 class="result-head">
-                            <a>So cat's are dumb huh?</a>
-                        </h1>
-                        <p class="result-content">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit delectus voluptas sequi animi culpa, impedit, beatae quod optio minus saepe earum quos ut soluta magnam doloribus veniam quibusdam vero fuga.
-                        </p>
-                    </div>
-                </div>
-                <div class="result-container">
-                    <div class="result">
-                        <a href="#" class="link">www.google.com</a>
-                        <h1 class="result-head">
-                            <a>So cat's are dumb huh?</a>
-                        </h1>
-                        <p class="result-content">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit delectus voluptas sequi animi culpa, impedit, beatae quod optio minus saepe earum quos ut soluta magnam doloribus veniam quibusdam vero fuga.
-                        </p>
-                    </div>
-                </div>
-                <div class="result-container">
-                    <div class="result">
-                        <a href="#" class="link">www.google.com</a>
-                        <h1 class="result-head">
-                            <a>So cat's are dumb huh?</a>
-                        </h1>
-                        <p class="result-content">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit delectus voluptas sequi animi culpa, impedit, beatae quod optio minus saepe earum quos ut soluta magnam doloribus veniam quibusdam vero fuga.
-                        </p>
-                    </div>
-                </div>
+                {% endfor %}
             </section>
         </div>
     </body>
