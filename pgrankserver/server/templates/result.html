@@ -12,19 +12,21 @@
     </head>
     <body>
         <div class="wrapper">
+            <form action="" method="get">
             <div class="nav-wrapper">
                 <div class="nav">
                     <div class="logo">
                         <h2>Poppi</h2>
                     </div>
                     <div class="searchbar">
-                        <input type="text" value="{{ query }}">
-                        <button>
+                        <input type="text" value="{{ query }}" name="q">
+                        <button type="submit">
                             <img src="{% static 'zoom.png' %}" alt="">
                         </button>
                     </div>
                 </div>
             </div>
+            </form>
             <section class="main">
                 {% for cat in cat_list %}
                 <div class="result-container">

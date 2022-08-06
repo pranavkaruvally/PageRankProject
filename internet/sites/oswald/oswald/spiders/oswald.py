@@ -1,13 +1,8 @@
 import scrapy
 import random
-import os
 
 
 class OswaldSpider(scrapy.Spider):
-
-    text_path = os.path.abspath('.').split(
-        'PageRankProject')[0] + '/PageRankProject/internet/scripts/sites.txt'
-
     name = 'oswald'
     count = 0
     start_urls = [
@@ -28,14 +23,6 @@ class OswaldSpider(scrapy.Spider):
             if next_page_url not in self.collected_urls:
                 self.count += 1
                 self.collected_urls.append(next_page_url)
-
-                if os.path.exists(self.text_path):
-                    with open(self.text_path, 'a') as f:
-                        f.write(next_page_url + '\n')
-                else:
-                    with open(self.text_path, 'w') as f:
-                        f.write(next_page_url + '\n')
-
                 if next_page_url not in self.start_urls:
                     self.start_urls.append(next_page_url)
                 yield {

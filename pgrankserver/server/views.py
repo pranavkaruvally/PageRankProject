@@ -1,4 +1,7 @@
+from django.http import HttpResponse
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
+import json
 
 # Create your views here.
 
@@ -17,3 +20,11 @@ def result(request):
     cat_list = [cat] * 4
     context = {'query': query, 'cat_list': cat_list}
     return render(request, 'result.html', context)
+
+def update_view(request):
+    return render(request, 'updatedb.html')
+
+@csrf_exempt
+def update_api(request):
+    print(request.POST)
+    return HttpResponse(200)

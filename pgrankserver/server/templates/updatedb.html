@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+    <body>
+        <h1>Click this button to update database</h1>
+        <button id="btn">Update</button>
+        {% csrf_token %}
+        <script>
+            let btn = document.getElementById("btn");
+            btn.onclick = async () => {
+            let res = await fetch("http://127.0.0.1:8000/api/scraper");
+            let respJson = await res.json();
+            let fetchedLinks = respJson["scrapedData"];
+            console.log(fetchedLinks);
+            
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://127.0.0.1:8001/api/update", true);
+
+            xhr.setRequestHeader("Content-Type", "application/json");
+
+            xhr.onload = () => console.log(xhr.responseText);
+
+            let data = JSON.stringify({
+            "Data": ${fetchedLinks},
+            });
+
+            xhr.send(data);
+
+        };
+        </script>
+    </body>
+</html>
