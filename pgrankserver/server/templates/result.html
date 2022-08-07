@@ -28,15 +28,15 @@
             </div>
             </form>
             <section class="main">
-                {% for cat in cat_list %}
+                {% for website in websites %}
                 <div class="result-container">
                     <div class="result">
-                        <a href="#" class="link">www.google.com</a>
+                        <a href="{{ website.url }}" class="link">{{ website.url }}</a>
                         <h1 class="result-head">
-                            <a>{{ cat.cathead }}</a>
+                            <a>{{ website.title }}</a>
                         </h1>
                         <p class="result-content">
-                            {{ cat.catbody }}
+                            {{ website.sample_content }}
                         </p>
                     </div>
                 </div>
