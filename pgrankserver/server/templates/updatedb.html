@@ -9,7 +9,7 @@
             btn.onclick = async () => {
             let res = await fetch("http://127.0.0.1:8000/api/scraper");
             let respJson = await res.json();
-            let fetchedLinks = respJson["scrapedData"];
+            let fetchedLinks = JSON.parse(respJson["scrapedData"]);
             console.log(fetchedLinks);
             
             let xhr = new XMLHttpRequest();
@@ -20,8 +20,9 @@
             xhr.onload = () => console.log(xhr.responseText);
 
             let data = JSON.stringify({
-            "Data": ${fetchedLinks},
+            "URLs": fetchedLinks,
             });
+            console.log(data);
 
             xhr.send(data);
 
