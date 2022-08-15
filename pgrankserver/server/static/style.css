@@ -122,7 +122,6 @@ p{
     display:flex;
     justify-content: start;
     align-items: center;
-
 }
 
 .wrapper .result-container .result{
@@ -135,7 +134,6 @@ p{
 .wrapper .result-container .result a:hover{
     text-decoration: underline;
     cursor: pointer;
-
 }
 .wrapper .result-container .result a.link{
     color:rgba(0,0,0,.6);
