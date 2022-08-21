@@ -17,7 +17,8 @@ def universal_link_set_retriever():
         link_dict = dict(zip(link_set, [x for x in range(30)]))
         return link_dict
 
-universal_link_set = universal_link_set_retriever()
+if __name__ == "__main__":
+    universal_link_set = universal_link_set_retriever()
 
 def extract_links(url):
     req = Request(url) # "http://127.0.0.1:8000/cats/1"
@@ -80,4 +81,11 @@ if __name__ == '__main__':
     transitional_matrix = generate_transitional_matrix()
     new_transitional_matrix = add_damping_factor(transitional_matrix)
     rank = generate_converged_rank_vector(new_transitional_matrix)
-    print(rank)
+
+    with open('sites.txt', 'r') as file:
+        sites_list = file.readlines()
+    
+    labels = sorted([site.strip().split('/')[-1] for site in sites_list])
+
+    score = dict(zip(labels, rank[0]))
+    print(score)
