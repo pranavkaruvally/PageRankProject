@@ -5,6 +5,7 @@ from server.models import Website
 import json
 from bs4 import BeautifulSoup
 from urllib.request import Request, urlopen
+from server.scripts import linkExtractor, mytfidf
 
 # Create your views here.
 
@@ -22,8 +23,15 @@ def result(request):
     # cat = Cats()
     # cat_list = [cat] * 4
     # context = {'query': query, 'cat_list': cat_list}
+    pgrank_score = linkExtractor.execute()
+    tfidf_score = mytfidf.sentence_wise_rank_generation(query)
 
-    websites = Website.objects.all()
+    category = lambda site: [cat for cat in ['animals', 'business', 'cars', 'technology', 'movies', 'health'] if cat.startswith(site[0])][0] + '/' + site
+    server_address = 'http://127.0.0.1:8000/'
+
+    total_score = dict([(server_address + category(d_key), pgrank_score[d_key] + tfidf_score[d_key]) for d_key, d_val in tfidf_score.items() if d_val > 0])
+
+    websites = sorted(Website.objects.filter(url__in=total_score), key=lambda x: total_score[x.url], reverse=True)
     context = {'query': query, 'websites': websites}
 
     return render(request, 'result.html', context)

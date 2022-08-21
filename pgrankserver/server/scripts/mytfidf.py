@@ -82,7 +82,7 @@ def scrape_text_data(url):
 
 
 def retrieve_site_info():
-    text_path = os.path.abspath('.') + '/sites.txt'
+    text_path = os.path.abspath('.').split('pgrankserver')[0] + 'pgrankserver/server/scripts/sites.txt'
     with open(text_path, 'r') as f:
         link_list = f.read().split()
 
@@ -95,6 +95,6 @@ def retrieve_site_info():
     return allDocs
 
 
-freq = sentence_wise_rank_generation("Spirited away")
+#freq = sentence_wise_rank_generation("Spirited away")
 # python3 mytfidf.py computers -> mytfidf.py at 0th index and computers at 1st index
-print(freq)
+#print(freq)

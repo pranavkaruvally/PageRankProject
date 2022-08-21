@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 from urllib.request import Request, urlopen
 import numpy as np
 import re
+import os
 
 # universal_link_set = {
 #     "http://127.0.0.1:8000/cats/1": 0,
@@ -9,16 +10,15 @@ import re
 #     "http://127.0.0.1:8000/cats/3": 2,
 #     "http://127.0.0.1:8000/cats/4": 3,
 # }
-
+file_path = os.path.abspath('.').split('pgrankserver')[0] + 'pgrankserver/server/scripts/sites.txt'
 def universal_link_set_retriever():
-    with open('sites.txt', 'r') as f:
+    with open(file_path, 'r') as f:
         link_set = f.read().strip().split()
         link_set.sort(key=lambda x: x.split('/')[-1])
         link_dict = dict(zip(link_set, [x for x in range(30)]))
         return link_dict
 
-if __name__ == "__main__":
-    universal_link_set = universal_link_set_retriever()
+universal_link_set = universal_link_set_retriever()
 
 def extract_links(url):
     req = Request(url) # "http://127.0.0.1:8000/cats/1"
@@ -77,15 +77,19 @@ def generate_converged_rank_vector(transitional_matrix): # We use the power meth
 
     return new_rank, iterations
 
-if __name__ == '__main__':
+def execute():
     transitional_matrix = generate_transitional_matrix()
     new_transitional_matrix = add_damping_factor(transitional_matrix)
     rank = generate_converged_rank_vector(new_transitional_matrix)
 
-    with open('sites.txt', 'r') as file:
+    with open(file_path, 'r') as file:
         sites_list = file.readlines()
     
     labels = sorted([site.strip().split('/')[-1] for site in sites_list])
 
     score = dict(zip(labels, rank[0]))
     print(score)
+    return score
+
+if __name__ == '__main__':
+    execute()
