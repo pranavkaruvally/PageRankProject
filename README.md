@@ -16,6 +16,16 @@ Install it simply by:
 pip install -r requirements.txt
 ```
 
+## Update the database
+From the root directory of your repo execute:
+```
+python3 internet/manage.py makemigrations
+python3 internet/manage.py migrate
+
+python3 pgrankserver/manage.py makemigrations
+python3 pgrankserver/manage.py migrate
+```
+
 # Pending work
 __________________
 
