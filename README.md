@@ -27,7 +27,7 @@ Now remove `db.sqlite3` if present in the `internet` folder inside the root dire
 Similary go to the `migrations` directory inside `pgrankserver/server` and delete everything except for `__init__.py`  
 Now remove `db.sqlite3` if present in the `pgrankserver` folder inside the root directory using `rm -rf db.sqlite3`  
   
-## Applying the migrations
+### Applying the migrations
 Now move back to the root directory of the repo(`PageRankProject`) and run:
 ```
 python3 internet/manage.py makemigrations
