@@ -46,10 +46,11 @@ def scrape_url(url):
     html_doc = urlopen(req)
 	
     soup = BeautifulSoup(html_doc, "lxml")
-    sample_content = ' '.join(soup.p.string.strip().split())
-    title = soup.h1.string.strip()
+    if soup is not None:
+        sample_content = ' '.join(soup.text.strip().split())
+        title = soup.h1.string.strip()
 	
-    return title, sample_content
+        return title, sample_content
 
 @csrf_exempt
 def update_api(request):
