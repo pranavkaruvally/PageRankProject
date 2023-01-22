@@ -82,7 +82,7 @@ def scrape_text_data(url):
 
 
 def retrieve_site_info():
-    text_path = os.path.abspath('.').split('pgrankserver')[0] + 'pgrankserver/server/scripts/sites.txt'
+    text_path = os.path.abspath('.').split('pgrankserver')[0] + '/pgrankserver/server/scripts/sites.txt'
     with open(text_path, 'r') as f:
         link_list = f.read().split()
 
