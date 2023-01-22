@@ -45,6 +45,17 @@ And in the one opened inside `pgrankserver` start the server at port `8001`
 python3 manage.py runserver 8001
 ```
 
+## Adding the websites to repertoire
+In the browser open up `127.0.0.1:8000/scrape` (Open up the corresponding url if `internet` server started on another `ip` or `port`)  
+Click on the button on the top left corner and this will find the websites present in the internet.  
+  
+Now open up `127.0.0.1:8001/update` and press the `Update` button.  
+  
+After all of this you can simple open up `127.0.0.1:8001` and use the search engine.
+![Screenshot from 2023-01-22 17-16-13](https://user-images.githubusercontent.com/49746983/213914143-53319d8f-7c86-4b79-a0e3-294581ea3148.png)
+
+![Screenshot from 2023-01-22 17-16-37](https://user-images.githubusercontent.com/49746983/213914187-9c67bf12-7e0b-4dfe-b3ef-f3266db0be7f.png)
+
 
 # Pending work
 __________________
