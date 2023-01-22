@@ -34,6 +34,18 @@ python3 pgrankserver/manage.py migrate
 python3 pgrankserver/manage.py createsuperuser
 ```
 
+## Starting the two servers
+Open up two terminals with the virtualenv activated one in the `internet` directory and the other in `pgrankserver` directory  
+In the one opened inside `internet` start the server at port `8000`
+```
+python3 manage.py runserver 8000
+```
+And in the one opened inside `pgrankserver` start the server at port `8001`
+```
+python3 manage.py runserver 8001
+```
+
+
 # Pending work
 __________________
 
