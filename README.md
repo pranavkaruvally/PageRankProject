@@ -16,14 +16,22 @@ Install it simply by:
 pip install -r requirements.txt
 ```
 
-## Update the database
-From the root directory of your repo execute:
+## Updating the database and creating a superuser
+Go to the `migrations` directory inside `internet/sites` and delete everything except for `__init__.py`  
+Now remove `db.sqlite3` if present in the `internet` folder inside the root directory using `rm -rf db.sqlite3`  
+  
+Similary go to the `migrations` directory inside `pgrankserver/server` and delete everything except for `__init__.py`  
+Now remove `db.sqlite3` if present in the `pgrankserver` folder inside the root directory using `rm -rf db.sqlite3`  
+  
+Now move back to the root directory of the repo(`PageRankProject`) and run:
 ```
 python3 internet/manage.py makemigrations
 python3 internet/manage.py migrate
+python3 internet/manage.py createsuper #and set a superuser
 
 python3 pgrankserver/manage.py makemigrations
 python3 pgrankserver/manage.py migrate
+python3 pgrankserver/manage.py createsuperuser
 ```
 
 # Pending work
