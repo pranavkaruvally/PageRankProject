@@ -9,9 +9,14 @@ cd PageRankProject
 python3 -m venv env
 source env/bin/activate
 ```
+## Installing required packages
+When you are at the root directory of your repo(`PageRankProject`) there will be a `requirements.txt` file with all the requirements.
+Install it simply by:
+```
+pip install -r requirements.txt
+```
 
-
-Pending work
+# Pending work
 __________________
 
 Add a 'Did you mean' feature using Keras
