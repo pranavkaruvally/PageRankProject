@@ -10,7 +10,7 @@ import os
 #     "http://127.0.0.1:8000/cats/3": 2,
 #     "http://127.0.0.1:8000/cats/4": 3,
 # }
-file_path = os.path.abspath('.').split('pgrankserver')[0] + 'pgrankserver/server/scripts/sites.txt'
+file_path = os.path.abspath('.').split('pgrankserver')[0] + '/pgrankserver/server/scripts/sites.txt'
 def universal_link_set_retriever():
     with open(file_path, 'r') as f:
         link_set = f.read().strip().split()
