@@ -20,7 +20,7 @@ pip install -r requirements.txt
 
 ### If you are facing issues with database or if the `migrations` directories contains files other than __init__.py before initial migration
 (If you do not have any `db.sqlite3` files lying around or if the `migrations` directory don't have anything other than `__init__.py`
-ignore this step and go to [applying the migrations](https://github.com/theunixdisaster/PageRankProject/blob/main/README.md#applying-the-migrationshttps://github.com/theunixdisaster/PageRankProject/blob/main/README.md#applying-the-migrations))  
+ignore this step and go to [applying the migrations](https://github.com/theunixdisaster/PageRankProject/blob/main/README.md#applying-the-migrations))  
 Go to the `migrations` directory inside `internet/sites` and delete everything except for `__init__.py`  
 Now remove `db.sqlite3` if present in the `internet` folder inside the root directory using `rm -rf db.sqlite3`  
   
