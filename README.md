@@ -50,7 +50,7 @@ And in the one opened inside `pgrankserver` start the server at port `8001`
 python3 manage.py runserver 8001
 ```
 
-## Adding the websites to repertoire
+## Adding the websites to the repertoire
 In the browser open up `127.0.0.1:8000/scrape` (Open up the corresponding url if `internet` server started on another `ip` or `port`)  
 Click on the button on the top left corner and this will find the websites present in the internet.  
   
