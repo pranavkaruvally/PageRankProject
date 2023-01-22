@@ -17,17 +17,22 @@ pip install -r requirements.txt
 ```
 
 ## Updating the database and creating a superuser
+
+### If you are facing issues with database or if the `migrations` directories contains files other than __init__.py before initial migration
+(If you do not have any `db.sqlite3` files lying around or if the `migrations` directory don't have anything other than `__init__.py`
+ignore this step and got to applying the migrations)  
 Go to the `migrations` directory inside `internet/sites` and delete everything except for `__init__.py`  
 Now remove `db.sqlite3` if present in the `internet` folder inside the root directory using `rm -rf db.sqlite3`  
   
 Similary go to the `migrations` directory inside `pgrankserver/server` and delete everything except for `__init__.py`  
 Now remove `db.sqlite3` if present in the `pgrankserver` folder inside the root directory using `rm -rf db.sqlite3`  
   
+## Applying the migrations
 Now move back to the root directory of the repo(`PageRankProject`) and run:
 ```
 python3 internet/manage.py makemigrations
 python3 internet/manage.py migrate
-python3 internet/manage.py createsuper #and set a superuser
+python3 internet/manage.py createsuperuser #and set a superuser
 
 python3 pgrankserver/manage.py makemigrations
 python3 pgrankserver/manage.py migrate
@@ -51,7 +56,9 @@ Click on the button on the top left corner and this will find the websites prese
   
 Now open up `127.0.0.1:8001/update` and press the `Update` button.  
   
-After all of this you can simple open up `127.0.0.1:8001` and use the search engine.
+After all of this you can simple open up `127.0.0.1:8001` and use the search engine.  
+  
+  
 ![Screenshot from 2023-01-22 17-16-13](https://user-images.githubusercontent.com/49746983/213914143-53319d8f-7c86-4b79-a0e3-294581ea3148.png)
 
 ![Screenshot from 2023-01-22 17-16-37](https://user-images.githubusercontent.com/49746983/213914187-9c67bf12-7e0b-4dfe-b3ef-f3266db0be7f.png)
